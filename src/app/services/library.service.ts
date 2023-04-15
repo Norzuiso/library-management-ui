@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 
@@ -14,6 +14,8 @@ export class LibraryService {
 
   constructor(private http: HttpClient) {
   }
+
   callGetLibraryInfo(): Observable<LibraryEntity> {
     return this.http.get<LibraryEntity>(LOCALHOST_8020_BUSINESS + '/library');
-  }}
+  }
+}
