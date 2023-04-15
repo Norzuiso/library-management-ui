@@ -1,12 +1,15 @@
 <div class="container-fluid mt-3">
   <div class="row">
     <div class="col-12">
-      <p class="h3 mx-5">Nuestra colección</p>
+      <span class="h3 mx-5">Nuestra colección</span>
+      <button type="button" class="btn btn-success mx-1 editButton" (click)="createBook()">Crear</button>
+
     </div>
   </div>
+
   <div class="row">
     <div class="col-12">
-      <app-show-book></app-show-book>
+      <app-book-list></app-book-list>
     </div>
   </div>
 

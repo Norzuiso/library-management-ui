@@ -17,6 +17,9 @@ export class BookService {
   callGetAllBooks(): Observable<BookEntity[]> {
     return this.http.get<BookEntity[]>(LOCALHOST_8020_BUSINESS + '/book');
   }
+  callGetBookByID(id: number): Observable<BookEntity> {
+    return this.http.get<BookEntity>(LOCALHOST_8020_BUSINESS + '/book/' + id);
+  }
 
   callGetAllBooksByPagination(page: number, amountOfElements: number): Observable<PaginationBook> {
     return this.http.get<PaginationBook>(LOCALHOST_8020_BUSINESS + '/book/' + page + '/' + amountOfElements);

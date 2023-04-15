@@ -17,7 +17,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import { ShowBookComponent } from './components/books/show-book/show-book.component';
 import {AlertsComponent} from "./components/index/alerts/alerts.component";
-import { BookElementComponent } from './components/books/show-book/book-element/book-element.component';
+import { BookElementComponent } from './components/books/book-element/book-element.component';
 import {BooksModule} from "./components/books/books.module";
 
 @NgModule({

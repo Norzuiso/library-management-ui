@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BookService} from "../../../services/books/book.service";
 import {BookEntity} from "../../../entities/book/book-entity";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-show-book',
@@ -9,15 +11,31 @@ import {BookEntity} from "../../../entities/book/book-entity";
 })
 export class ShowBookComponent implements OnInit {
 
-  books: any
+  book: BookEntity = new BookEntity()
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService,
+              private router: Router,
+              private activeRoute: ActivatedRoute,
+              private titleService: Title) {
+
+  }
 
   ngOnInit(): void {
-    this.bookService.callGetAllBooks().subscribe(data=>{
-      this.books = data
-      console.log(data)
+    let id = 0;
+    this.activeRoute.paramMap.subscribe(params => {
+      id = parseInt(<string>params.get('id'))
+    })
+    this.bookService.callGetBookByID(id).subscribe(data => {
+      this.book = data
+      this.titleService.setTitle(this.book.title);
     });
   }
 
+  loanBook() {
+
+  }
+
+  editBook() {
+
+  }
 }
