@@ -15,6 +15,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
+import { ShowBookComponent } from './components/books/show-book/show-book.component';
+import {AlertsComponent} from "./components/index/alerts/alerts.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {MatButtonModule} from "@angular/material/button";
     LandingComponent,
     FooterComponent,
     NavComponent,
-    LoanComponent
+    LoanComponent,
+    ShowBookComponent,
+    AlertsComponent
   ],
   imports: [
     BrowserModule,
