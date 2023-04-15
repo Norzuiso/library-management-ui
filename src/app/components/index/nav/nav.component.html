@@ -1,0 +1,39 @@
+<!-- Image and text -->
+<nav class="navbar navbar-light border-bottom">
+  <div class="container-fluid ">
+    <div class="row w-100">
+      <div class="col-2">
+        <a class="navbar-brand" href="#">
+            <span class="h3">
+            WM Wonderman
+           </span>
+        </a>
+      </div>
+      <div class="col-4 border-left">
+        <button mat-button [matMenuTriggerFor]="inventoryMenu" class="mx-3">
+          <span class="h4">
+          Inventario
+          </span>
+        </button>
+        <button mat-button [matMenuTriggerFor]="productMenu"  class="mx-3">
+          <span class="h4">
+          Producto
+          </span>
+        </button>
+        <mat-menu #inventoryMenu="matMenu">
+          <button mat-menu-item  (click)="navigateMenu('inventory-product')">Registrar Producto</button>
+        </mat-menu>
+
+        <mat-menu #productMenu="matMenu">
+          <button mat-menu-item (click)="navigateMenu('product')">Productos</button>
+          <button mat-menu-item  (click)="navigateMenu('departments')">Departamento</button>
+          <button mat-menu-item  (click)="navigateMenu('brand')">Marcas</button>
+          <button mat-menu-item  (click)="navigateMenu('sizes')">Tallas</button>
+          <button mat-menu-item  (click)="navigateMenu('colors')">Colores</button>
+          <button mat-menu-item  (click)="navigateMenu('providers')">Proveedores</button>
+        </mat-menu>
+      </div>
+    </div>
+
+  </div>
+</nav>
