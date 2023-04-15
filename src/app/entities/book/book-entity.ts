@@ -8,6 +8,6 @@ export class BookEntity {
   edition: string = "";
   copiesQuantity: number =1;
   synopsis: string = "";
-  SCDD: string = "";
+  scdd: string = "";
   isAvailable: boolean = false;
 }
