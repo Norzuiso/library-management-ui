@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-nav',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
   collapsed = true;
 
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
+  navigateMenu(route: string) {
+    this.router.navigate([route]);
+  }
 }
