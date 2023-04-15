@@ -26,13 +26,13 @@
       </span>
       <br>
       <div class="mt-2">
-        <span class="h6 fw-bold">Synopsis: </span>
+        <span class="h6 fw-bold">Sinopsis: </span>
         <span
           class="fst-italic">{{ (book.synopsis.length > 150) ? (book.synopsis | slice:0:150) + '...' : (book.synopsis) }}</span>
       </div>
     </div>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button mat-stroked-button class="w-100">Leer más</button>
+    <button mat-stroked-button class="w-100" (click)="bookSelected()">Leer más</button>
   </mat-card-actions>
 </mat-card>

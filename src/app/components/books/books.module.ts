@@ -1,12 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BooksComponent} from "./books.component";
-import {BookElementComponent} from "./show-book/book-element/book-element.component";
+import {BookElementComponent} from "./book-element/book-element.component";
 import {MatCardModule} from "@angular/material/card";
-import {AppModule} from "../../app.module";
 import {ShowBookComponent} from "./show-book/show-book.component";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import { BookListComponent } from './book-list/book-list.component';
+import {RouterLink} from "@angular/router";
+import { CreateBooksComponent } from './create-books/create-books.component';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import {MatIconModule} from "@angular/material/icon";
     BooksComponent,
     BookElementComponent,
     ShowBookComponent,
+    BookListComponent,
+    CreateBooksComponent,
   ],
   exports: [
     BooksComponent,
@@ -25,6 +29,7 @@ import {MatIconModule} from "@angular/material/icon";
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    RouterLink,
   ]
 })
 export class BooksModule {
