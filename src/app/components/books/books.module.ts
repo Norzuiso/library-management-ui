@@ -9,6 +9,8 @@ import {MatIconModule} from "@angular/material/icon";
 import { BookListComponent } from './book-list/book-list.component';
 import {RouterLink} from "@angular/router";
 import { CreateBooksComponent } from './create-books/create-books.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { CreateBooksComponent } from './create-books/create-books.component';
     MatButtonModule,
     MatIconModule,
     RouterLink,
+    ReactiveFormsModule,
+    MatInputModule,
   ]
 })
 export class BooksModule {
