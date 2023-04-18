@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {ROLE_FROM_NAV} from "../../../app.component";
 
 @Component({
   selector: 'app-nav',
@@ -9,6 +10,7 @@ import {Router} from "@angular/router";
 export class NavComponent implements OnInit {
   collapsed = true;
 
+  roleNav = ROLE_FROM_NAV;
   constructor(private router: Router) {
   }
 

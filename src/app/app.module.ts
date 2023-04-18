@@ -18,6 +18,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {BooksModule} from "./components/books/books.module";
 import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 import {AlertsComponent} from "./components/alerts/alerts.component";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {AlertsComponent} from "./components/alerts/alerts.component";
     MatButtonModule,
     BooksModule,
     NoopAnimationsModule,
+    MatTableModule,
   ],
   providers: [],
   exports: [
