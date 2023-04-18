@@ -3,9 +3,9 @@
   <div class="row mb-2 mt-4">
     <div class="col-12">
       <button mat-raised-button color="warn" routerLink="/books">Regresar</button>
-      <button type="button" class="btn btn-secondary mx-1" (click)="editBook()">Editar</button>
+      <button type="button" class="btn btn-secondary mx-1" (click)="editBook()"  *ngIf="roleNav == 'ADMINISTRADOR'">Editar</button>
       <button type="button" class="btn btn-success" (click)="loanBook()"
-              *ngIf="this.book.id!=0">Pedir libro
+              *ngIf="this.book.id!=0 && roleNav == 'ADMINISTRADOR'">Pedir libro
       </button>
     </div>
   </div>

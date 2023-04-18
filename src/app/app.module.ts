@@ -15,10 +15,10 @@ import {HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
-import { ShowBookComponent } from './components/books/show-book/show-book.component';
-import {AlertsComponent} from "./components/index/alerts/alerts.component";
-import { BookElementComponent } from './components/books/book-element/book-element.component';
 import {BooksModule} from "./components/books/books.module";
+import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {AlertsComponent} from "./components/alerts/alerts.component";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -30,7 +30,6 @@ import {BooksModule} from "./components/books/books.module";
     NavComponent,
     LoanComponent,
     AlertsComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -40,7 +39,9 @@ import {BooksModule} from "./components/books/books.module";
     NgbModule,
     MatMenuModule,
     MatButtonModule,
-    BooksModule
+    BooksModule,
+    NoopAnimationsModule,
+    MatTableModule,
   ],
   providers: [],
   exports: [

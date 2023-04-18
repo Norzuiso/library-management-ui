@@ -3,6 +3,7 @@ import {BookService} from "../../../services/books/book.service";
 import {BookEntity} from "../../../entities/book/book-entity";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Title} from "@angular/platform-browser";
+import {ROLE_FROM_NAV} from "../../../app.component";
 
 @Component({
   selector: 'app-show-book',
@@ -12,6 +13,7 @@ import {Title} from "@angular/platform-browser";
 export class ShowBookComponent implements OnInit {
 
   book: BookEntity = new BookEntity()
+  roleNav: string = ROLE_FROM_NAV;
 
   constructor(private bookService: BookService,
               private router: Router,
