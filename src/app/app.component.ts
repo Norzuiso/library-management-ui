@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-export var ROLE_FROM_NAV: string ="ADMINISTRADOR";
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

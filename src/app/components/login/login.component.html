@@ -1,1 +1,26 @@
-<p>login works!</p>
+<form [formGroup]="formGroup" novalidate>
+  <div class="container mt-5">
+
+    <div class="row">
+      <div class="col-6 offset-3">
+        <p class="h2 text-center">Ingresa la contraseña del sistema</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 offset-3 mt-2">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label> Contraseña</mat-label>
+          <input matInput [(ngModel)]="password"
+                 formControlName="password" type="password">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 offset-3">
+        <button type="button" class="btn btn-success w-100" (click)="submitLogin()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</form>
