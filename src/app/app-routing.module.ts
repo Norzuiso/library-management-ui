@@ -8,22 +8,30 @@ import {ReadersComponent} from "./components/readers/readers.component";
 import {LoanComponent} from "./components/loan/loan.component";
 import {ShowBookComponent} from "./components/books/show-book/show-book.component";
 import {CreateBooksComponent} from "./components/books/create-books/create-books.component";
+import {ShowReadersComponent} from "./components/readers/show-readers/show-readers.component";
+import {CreateReaderComponent} from "./components/readers/create-reader/create-reader.component";
 
 
 const routes: Routes = [
     {path: '', redirectTo: 'inicio', pathMatch: 'full'},
     {path: 'inicio', component: LandingComponent, pathMatch: 'full'},
     {path: 'books', component: BooksComponent, pathMatch: 'full'},
-  {
-    path: 'books',
+    {
+      path: 'books',
+      children: [
+        {path: 'create', component: CreateBooksComponent, title: 'Crear'},
+        {path: ':id', component: ShowBookComponent, title: 'Libro'},
+        {path: '', component: BooksComponent, pathMatch: 'full'},
+      ]
+    },{
+    path: 'readers',
     children: [
-      {path: 'create', component: CreateBooksComponent, title: 'Crear'},
-      {path: ':id', component: ShowBookComponent, title: 'Libro'},
-      {path: '', component: BooksComponent, pathMatch: 'full'},
+      {path: 'create', component: CreateReaderComponent, title: 'Crear'},
+      {path: ':id', component: CreateReaderComponent, title: 'Lector'},
+      {path: '', component: ReadersComponent, pathMatch: 'full'},
     ]
   },
     {path: 'login', component: LoginComponent, pathMatch: 'full'},
-    {path: 'readers', component: ReadersComponent, pathMatch: 'full'},
     {path: 'loan', component: LoanComponent, pathMatch: 'full'}
   ]
 ;
