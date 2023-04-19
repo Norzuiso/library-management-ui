@@ -11,51 +11,20 @@
     <div class="row">
       <div class="col-12 mt-3">
         <mat-form-field appearance="fill" class="w-100">
-          <mat-label> Titulo</mat-label>
-          <input matInput [(ngModel)]="book.title"
-                 formControlName="title">
+          <mat-label>Nombre</mat-label>
+          <input matInput [(ngModel)]="reader.name"
+                 formControlName="name">
         </mat-form-field>
         <mat-form-field appearance="fill" class="w-100">
-          <mat-label> Autor</mat-label>
-          <input matInput [(ngModel)]="book.author"
-                 formControlName="author">
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="w-40">
-          <mat-label> Editorial</mat-label>
-          <input matInput [(ngModel)]="book.editorial"
-                 formControlName="editorial">
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="w-40 float-end">
-          <mat-label> Genero</mat-label>
-          <input matInput [(ngModel)]="book.gender"
-                 formControlName="gender">
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="w-40">
-          <mat-label> Edición</mat-label>
-          <input matInput [(ngModel)]="book.edition"
-                 formControlName="edition">
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="w-40 float-end">
-          <mat-label> Año de publicación</mat-label>
-          <input matInput [(ngModel)]="book.publishYear"
-                 formControlName="publishYear">
+          <mat-label>Domicilio</mat-label>
+          <input matInput [(ngModel)]="reader.address"
+                 formControlName="address">
         </mat-form-field>
         <mat-form-field appearance="fill" class="w-100">
-          <mat-label> Sinopsis</mat-label>
-          <textarea matInput [(ngModel)]="book.synopsis"
-                    formControlName="synopsis"></textarea>
+          <mat-label>Número telefonico</mat-label>
+          <input matInput [(ngModel)]="reader.phone"
+                 formControlName="phone">
         </mat-form-field>
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label> SCDD</mat-label>
-          <input matInput [(ngModel)]="book.scdd"
-                 formControlName="scdd">
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label> Cantidad de ejemplares</mat-label>
-          <input matInput [(ngModel)]="book.copiesQuantity" type="number"
-                 formControlName="copiesQuantity">
-        </mat-form-field>
-
       </div>
 
     </div>

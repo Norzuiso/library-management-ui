@@ -32,19 +32,19 @@ export class ReadersService {
     return this.http.get<ReaderEntity[]>(`${globalConstants.LOCALHOST_8020_BUSINESS}/reader/available`);
   }
 
-  callCreateReader(book: ReaderEntity): Observable<ReaderEntity> {
-    return this.http.post<ReaderEntity>(`${globalConstants.LOCALHOST_8020_BUSINESS}/reader`, book);
+  callCreateReader(reader: ReaderEntity): Observable<ReaderEntity> {
+    return this.http.post<ReaderEntity>(`${globalConstants.LOCALHOST_8020_BUSINESS}/reader`, reader);
   }
 
-  callGetReadersFiltered(bookSearch: ReaderSearch): Observable<ReaderEntity[]> {
-    return this.http.post<ReaderEntity[]>(`${globalConstants.LOCALHOST_8020_BUSINESS}/reader/filter`, bookSearch);
+  callGetReadersFiltered(readerSearch: ReaderSearch): Observable<ReaderEntity[]> {
+    return this.http.post<ReaderEntity[]>(`${globalConstants.LOCALHOST_8020_BUSINESS}/reader/filter`, readerSearch);
   }
 
-  callGetReadersFilterAndPagination(page: number, amountOfElements: number, bookSearch: ReaderSearch): Observable<PaginationReader> {
-    return this.http.post<PaginationReader>(`${globalConstants.LOCALHOST_8020_BUSINESS}/reader/filter/${page}/${amountOfElements}`, bookSearch);
+  callGetReadersFilterAndPagination(page: number, amountOfElements: number, readerSearch: ReaderSearch): Observable<PaginationReader> {
+    return this.http.post<PaginationReader>(`${globalConstants.LOCALHOST_8020_BUSINESS}/reader/filter/${page}/${amountOfElements}`, readerSearch);
   }
 
-  callUpdateReader(id: any, book: ReaderEntity): Observable<ReaderEntity> {
-    return this.http.put<ReaderEntity>(`${globalConstants.LOCALHOST_8020_BUSINESS}/reader/${id}`, book);
+  callUpdateReader(id: any, reader: ReaderEntity): Observable<ReaderEntity> {
+    return this.http.put<ReaderEntity>(`${globalConstants.LOCALHOST_8020_BUSINESS}/reader/${id}`, reader);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-readers',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
 
   createReader() {
-
+    this.route.navigate(['/readers/create'])
   }
 
   getRole() {
