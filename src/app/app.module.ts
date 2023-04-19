@@ -21,6 +21,10 @@ import {MatTableModule} from "@angular/material/table";
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {ReadersModule} from "./components/readers/readers.module";
+import { CreateLoanComponent } from './components/loan/create-loan/create-loan.component';
+import { ShowLoanComponent } from './components/loan/show-loan/show-loan.component';
+import { LoanInfoComponent } from './components/loan/loan-info/loan-info.component';
+import { LoanSearchComponent } from './entities/loan/loan-search/loan-search.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import {ReadersModule} from "./components/readers/readers.module";
     NavComponent,
     LoanComponent,
     AlertsComponent,
+    CreateLoanComponent,
+    ShowLoanComponent,
+    LoanInfoComponent,
+    LoanSearchComponent,
   ],
   imports: [
     ReadersModule,
