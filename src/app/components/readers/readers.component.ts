@@ -12,4 +12,11 @@ export class ReadersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  createReader() {
+
+  }
+
+  getRole() {
+    return localStorage.getItem('role');
+  }
 }

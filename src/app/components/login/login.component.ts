@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {AlertsService} from "../alerts/alerts.service";
-import {Roles} from "../../utils/roles";
 import {LibraryService} from "../../services/library/library.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 

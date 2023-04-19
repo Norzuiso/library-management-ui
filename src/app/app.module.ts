@@ -11,7 +11,7 @@ import {LoanComponent} from './components/loan/loan.component';
 import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {BooksModule} from "./components/books/books.module";
@@ -20,12 +20,12 @@ import {AlertsComponent} from "./components/alerts/alerts.component";
 import {MatTableModule} from "@angular/material/table";
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
+import {ReadersModule} from "./components/readers/readers.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ReadersComponent,
     LandingComponent,
     FooterComponent,
     NavComponent,
@@ -33,6 +33,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     AlertsComponent,
   ],
   imports: [
+    ReadersModule,
     BrowserModule,
     RouterOutlet,
     AppRoutingModule,
@@ -47,9 +48,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     ReactiveFormsModule,
   ],
   providers: [],
-  exports: [
-
-  ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
