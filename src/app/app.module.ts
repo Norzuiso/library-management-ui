@@ -3,7 +3,6 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {LoginComponent} from './components/login/login.component';
-import {BooksComponent} from './components/books/books.component';
 import {ReadersComponent} from './components/readers/readers.component';
 import {LandingComponent} from './components/index/landing/landing.component';
 import {FooterComponent} from './components/index/footer/footer.component';
@@ -19,6 +18,8 @@ import {BooksModule} from "./components/books/books.module";
 import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 import {AlertsComponent} from "./components/alerts/alerts.component";
 import {MatTableModule} from "@angular/material/table";
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -42,6 +43,8 @@ import {MatTableModule} from "@angular/material/table";
     BooksModule,
     NoopAnimationsModule,
     MatTableModule,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   exports: [

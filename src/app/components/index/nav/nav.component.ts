@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {ROLE_FROM_NAV} from "../../../app.component";
+import {LibraryService} from "../../../services/library/library.service";
 
 @Component({
   selector: 'app-nav',
@@ -10,8 +10,10 @@ import {ROLE_FROM_NAV} from "../../../app.component";
 export class NavComponent implements OnInit {
   collapsed = true;
 
-  roleNav = ROLE_FROM_NAV;
-  constructor(private router: Router) {
+  roleNav = this.libraryService.libraryRole;
+
+  constructor(private router: Router,
+              private libraryService: LibraryService) {
   }
 
   ngOnInit(): void {
@@ -19,5 +21,13 @@ export class NavComponent implements OnInit {
 
   navigateMenu(route: string) {
     this.router.navigate([route]);
+  }
+
+  logout() {
+    localStorage.setItem('role', 'user');
+  }
+
+  getRole() {
+    return localStorage.getItem("role")
   }
 }
