@@ -24,7 +24,7 @@ import {ReadersModule} from "./components/readers/readers.module";
 import { CreateLoanComponent } from './components/loan/create-loan/create-loan.component';
 import { ShowLoanComponent } from './components/loan/show-loan/show-loan.component';
 import { LoanInfoComponent } from './components/loan/loan-info/loan-info.component';
-import { LoanSearchComponent } from './entities/loan/loan-search/loan-search.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -38,7 +38,6 @@ import { LoanSearchComponent } from './entities/loan/loan-search/loan-search.com
     CreateLoanComponent,
     ShowLoanComponent,
     LoanInfoComponent,
-    LoanSearchComponent,
   ],
   imports: [
     ReadersModule,
@@ -54,6 +53,7 @@ import { LoanSearchComponent } from './entities/loan/loan-search/loan-search.com
     MatTableModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatPaginatorModule,
   ],
   providers: [],
   exports: [],

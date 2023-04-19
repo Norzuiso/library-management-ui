@@ -1,7 +1,7 @@
 import {BookEntity} from "../book/book-entity";
 import {ReaderEntity} from "../reader/readerEntity";
 
-export class LoanResearch {
+export class LoanSearch {
   id: number
   loanDate: Date
   expiredDate: Date

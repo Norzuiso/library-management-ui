@@ -1,7 +1,7 @@
-import { LoanResearch } from './loan-research';
+import { LoanSearch } from './loan-search';
 
 describe('LoanResearch', () => {
   it('should create an instance', () => {
-    expect(new LoanResearch()).toBeTruthy();
+    expect(new LoanSearch()).toBeTruthy();
   });
 });
