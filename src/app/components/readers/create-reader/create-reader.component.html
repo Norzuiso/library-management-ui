@@ -1,0 +1,32 @@
+<form [formGroup]="formGroup" novalidate>
+  <div class="container">
+
+    <div class="row mb-2 mt-3">
+      <div class="col-12">
+        <button mat-raised-button color="warn" routerLink="/readers">Regresar</button>
+        <button type="button" class="btn btn-success mx-3" (click)="saveReader()">Guardar</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mt-3">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Nombre</mat-label>
+          <input matInput [(ngModel)]="reader.name"
+                 formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Domicilio</mat-label>
+          <input matInput [(ngModel)]="reader.address"
+                 formControlName="address">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Número telefonico</mat-label>
+          <input matInput [(ngModel)]="reader.phone"
+                 formControlName="phone">
+        </mat-form-field>
+      </div>
+
+    </div>
+  </div>
+</form>

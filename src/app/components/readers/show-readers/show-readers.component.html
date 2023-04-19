@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 my-2">
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="readers">
+
+          <ng-container matColumnDef="ID">
+            <th mat-header-cell *matHeaderCellDef class="text-center border">ID</th>
+            <td mat-cell *matCellDef="let element" class="border px-2"> {{element.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Nombre">
+            <th mat-header-cell *matHeaderCellDef class="text-center border">Nombre</th>
+            <td mat-cell *matCellDef="let element" class="border px-2"> {{element.name}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Dirección">
+            <th mat-header-cell *matHeaderCellDef class="text-center border">Dirección</th>
+            <td mat-cell *matCellDef="let element" class="border px-2"> {{element.address}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Número telefonico">
+            <th mat-header-cell *matHeaderCellDef class="text-center border">Número telefonico</th>
+            <td mat-cell *matCellDef="let element" class="border px-2"> {{element.phone}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row
+              (click)="rowClicked(row)"
+              *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator (page)="handlePageEvent($event)"
+                       [length]="totalElements"
+                       [pageSize]="pageSize"
+                       [showFirstLastButtons]="showFirstLastButtons"
+                       [hidePageSize]="true"
+                       [pageIndex]="pageIndex"
+                       aria-label="Select page">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

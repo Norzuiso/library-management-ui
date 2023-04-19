@@ -3,6 +3,7 @@ import {BookEntity} from "../../../entities/book/book-entity";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {BookService} from "../../../services/books/book.service";
 import {AlertsService} from "../../alerts/alerts.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-create-books',
@@ -36,17 +37,24 @@ export class CreateBooksComponent implements OnInit {
   });
 
   constructor(private bookService: BookService,
-              public alertsService: AlertsService) {
+              public alertsService: AlertsService,
+              private activeRoute: ActivatedRoute,) {
   }
 
   ngOnInit(): void {
+    this.activeRoute.paramMap.subscribe(params => {
+      this.book.id = parseInt(<string>params.get('id'))
+    })
+    if (this.book.id != 0 && !isNaN(this.book.id)) {
+      this.bookService.callGetBookByID(this.book.id).subscribe(data => {
+        this.book = data;
+      })
+    }
   }
 
   saveBook() {
     this.bookService.callCreateBook(this.book).subscribe(data => {
-      console.log(data.id != null)
       if (data.id != null) {
-        console.log("Creado")
         this.alertsService.success("Libro creado correctamente", {
           autoClose: true,
           keepAfterRouteChange: true
@@ -55,7 +63,8 @@ export class CreateBooksComponent implements OnInit {
         this.alertsService.error("Error al crear libro", {
           autoClose: true,
           keepAfterRouteChange: true
-        });      }
+        });
+      }
     });
   }
 
