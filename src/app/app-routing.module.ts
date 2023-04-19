@@ -20,19 +20,29 @@ const routes: Routes = [
       path: 'books',
       children: [
         {path: 'create', component: CreateBooksComponent, title: 'Crear'},
+        {path: 'create/:id', component: CreateBooksComponent, title: 'Crear'},
+
         {path: ':id', component: ShowBookComponent, title: 'Libro'},
         {path: '', component: BooksComponent, pathMatch: 'full'},
       ]
-    },{
-    path: 'readers',
-    children: [
-      {path: 'create', component: CreateReaderComponent, title: 'Crear'},
-      {path: ':id', component: CreateReaderComponent, title: 'Lector'},
-      {path: '', component: ReadersComponent, pathMatch: 'full'},
-    ]
-  },
+    },
+    {
+      path: 'readers',
+      children: [
+        {path: 'create', component: CreateReaderComponent, title: 'Crear'},
+        {path: ':id', component: CreateReaderComponent, title: 'Lector'},
+        {path: '', component: ReadersComponent, pathMatch: 'full'},
+      ]
+    },
     {path: 'login', component: LoginComponent, pathMatch: 'full'},
-    {path: 'loan', component: LoanComponent, pathMatch: 'full'}
+    {
+      path: 'loan',
+      children: [
+        {path: 'create', component: CreateReaderComponent, title: 'Crear'},
+        {path: ':id', component: CreateReaderComponent, title: 'Prestamo'},
+        {path: '', component: ReadersComponent, pathMatch: 'full'},
+      ]
+    },
   ]
 ;
 

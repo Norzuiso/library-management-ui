@@ -36,6 +36,7 @@ export class ShowBookComponent implements OnInit {
   }
 
   editBook() {
+    this.router.navigate(['/books/create/'+this.book.id ])
 
   }
 
