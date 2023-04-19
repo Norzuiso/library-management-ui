@@ -16,6 +16,7 @@ export class LoanService {
     return this.client.get<LoanEntity[]>(`${globalConstants.LOCALHOST_8020_BUSINESS}/loan`)
   }
   callGetLoanById(id: number): Observable<LoanEntity> {
+    console.log(id)
     return this.client.get<LoanEntity>(`${globalConstants.LOCALHOST_8020_BUSINESS}/loan/${id}`)
   }
 

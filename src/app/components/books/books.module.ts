@@ -11,6 +11,7 @@ import {RouterLink} from "@angular/router";
 import { CreateBooksComponent } from './create-books/create-books.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import { BookInfoComponent } from './show-book/book-info/book-info.component';
 
 
 @NgModule({
@@ -20,11 +21,13 @@ import {MatInputModule} from "@angular/material/input";
     ShowBookComponent,
     BookListComponent,
     CreateBooksComponent,
+    BookInfoComponent,
   ],
   exports: [
     BooksComponent,
     BookElementComponent,
     ShowBookComponent,
+    BookInfoComponent,
   ],
   imports: [
     CommonModule,

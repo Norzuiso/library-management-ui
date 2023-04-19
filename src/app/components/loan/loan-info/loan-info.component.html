@@ -1,1 +1,52 @@
-<p>loan-info works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <span class="h2 mx-3">Prestamo</span>
+      <button type="button" class="btn btn-warning editButton w-25" routerLink="/loan">Regresar</button>
+      <button type="button" class="btn btn-success w-25 mx-3" (click)="backBook()"
+              *ngIf="this.loan.id!=0 && getRole() == 'ADMINISTRADOR' && this.loan.isActive">Entregar
+      </button>
+    </div>
+  </div>
+  <hr>
+
+  <h3>Libro</h3>
+  <app-book-info [book]="loan.book"></app-book-info>
+
+  <hr>
+  <div class="row">
+    <h3>Lector</h3>
+    <div class="col-12">
+      <span class="fw-bold">ID: </span>
+      <span class="fst-italic">{{loan.reader.id}}</span><br>
+
+      <span class="fw-bold">Nombre: </span>
+      <span class="fst-italic">{{loan.reader.name}}</span><br>
+
+      <span class="fw-bold">Domicilio: </span>
+      <span class="fst-italic">{{loan.reader.address}}</span><br>
+
+      <span class="fw-bold">Número telefonico: </span>
+      <span class="fst-italic">{{loan.reader.phone}}</span><br>
+    </div>
+
+  </div>
+
+  <hr>
+  <div class="row pb-5">
+
+    <div class="col-12">
+      <span class="fw-bold">Fecha del prestamo: </span>
+      <span class="fst-italic">{{loan.loanDate}}</span><br>
+      <span class="fw-bold">Fecha de entrega: </span>
+      <span class="fst-italic">{{loan.expiredDate}}</span><br>
+    </div>
+    <div class="col-12">
+      <span class="fw-bold">Estatus: </span>
+      <span class="rounded-5 w-75 text-center px-3 text-center text-black bg-info"
+            [ngClass]="{'bg-warning':loan.isActive}">
+        {{loan.isActive ? 'Pendiente' : 'Devuelto'}}
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-12">
+
+        <span class="h2">{{book.title}}</span><br>
+        <span class="h4 text-muted">{{book.author}}</span><br>
+        <br>
+
+        <span class="fw-bold">SCDD: </span>
+        <span class="fst-italic">{{book.scdd}}</span><br>
+
+        <span class="fw-bold">Editorial: </span>
+        <span class="fst-italic">{{book.editorial}}</span><br>
+
+        <span class="fw-bold">Género: </span>
+        <span class="fst-italic">{{book.gender}}</span><br>
+
+        <span class="fw-bold">Edición: </span>
+        <span class="fst-italic">{{book.edition}}</span><br>
+
+        <span class="fw-bold">Año de publicación: </span>
+        <span class="fst-italic">{{book.publishYear}}</span><br>
+
+
+    </div>
+    <div class="mt-2 col-12">
+        <span class="h6 fw-bold">Sinopsis: </span>
+        <span
+                class="fst-italic">{{ book.synopsis }}</span>
+    </div>
+    <div class="mt-2 col-12 border-top">
+
+        <span class="fw-bold">Cantidad displonibe: </span>
+        <span class="fst-italic">{{book.copiesQuantity}}</span><br>
+
+        <span class="fw-bold">Displonibe para prestamo: </span>
+        <span class="fst-italic">{{book.isAvailable ? "Disponible" : "No disponible"}}</span>
+    </div>
+</div>

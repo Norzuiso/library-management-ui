@@ -9,19 +9,35 @@
             <td mat-cell *matCellDef="let element" class="border px-2"> {{element.id}} </td>
           </ng-container>
 
-          <ng-container matColumnDef="Nombre">
-            <th mat-header-cell *matHeaderCellDef class="text-center border">Nombre</th>
-            <td mat-cell *matCellDef="let element" class="border px-2"> {{element.name}}</td>
+          <ng-container matColumnDef="Libro">
+            <th mat-header-cell *matHeaderCellDef class="text-center border">Libro</th>
+            <td mat-cell *matCellDef="let element" class="border px-2"> {{element.book.title}} - <b
+              class="font-weight-bold">SCDD: </b>{{element.book.scdd}}</td>
+          </ng-container>
+          <ng-container matColumnDef="Lector">
+            <th mat-header-cell *matHeaderCellDef class="text-center border">Lector</th>
+            <td mat-cell *matCellDef="let element" class="border px-2"> {{element.reader.name}} </td>
           </ng-container>
 
-          <ng-container matColumnDef="Dirección">
-            <th mat-header-cell *matHeaderCellDef class="text-center border">Dirección</th>
-            <td mat-cell *matCellDef="let element" class="border px-2"> {{element.address}} </td>
+          <ng-container matColumnDef="Fecha de prestamo" class=" align-content-center">
+            <th mat-header-cell *matHeaderCellDef class="border text-end px-2">Fecha de prestamo</th>
+            <td mat-cell *matCellDef="let element" class="border px-2 text-end">{{element.loanDate}}</td>
           </ng-container>
 
-          <ng-container matColumnDef="Número telefonico">
-            <th mat-header-cell *matHeaderCellDef class="text-center border">Número telefonico</th>
-            <td mat-cell *matCellDef="let element" class="border px-2"> {{element.phone}} </td>
+          <ng-container matColumnDef="Fecha para regreso">
+            <th mat-header-cell *matHeaderCellDef class="border text-end px-2">Fecha de expiración del prestamo</th>
+            <td mat-cell *matCellDef="let element" class="border px-2 text-end"> {{element.expiredDate}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Estatus">
+            <th mat-header-cell *matHeaderCellDef class="text-center border">Estado</th>
+
+            <td mat-cell *matCellDef="let element" class="border text-center">
+                <span class="rounded-5 w-75 text-center px-3 text-center text-black bg-info"
+                      [ngClass]="{'bg-warning':element.isActive}">
+                      {{element.isActive ? 'Pendiente': 'Devuelto'}}
+                </span>
+            </td>
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
