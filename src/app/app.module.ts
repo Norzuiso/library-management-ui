@@ -19,13 +19,15 @@ import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 import {AlertsComponent} from "./components/alerts/alerts.component";
 import {MatTableModule} from "@angular/material/table";
 import {MatInputModule} from "@angular/material/input";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ReadersModule} from "./components/readers/readers.module";
 import { CreateLoanComponent } from './components/loan/create-loan/create-loan.component';
 import { ShowLoanComponent } from './components/loan/show-loan/show-loan.component';
 import { LoanInfoComponent } from './components/loan/loan-info/loan-info.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import { ShowReaderInfoComponent } from './components/loan/loan-info/show-reader-info/show-reader-info.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -56,6 +58,11 @@ import { ShowReaderInfoComponent } from './components/loan/loan-info/show-reader
     MatInputModule,
     ReactiveFormsModule,
     MatPaginatorModule,
+    MatDatepickerModule,
+
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FormsModule
   ],
   providers: [],
   exports: [],

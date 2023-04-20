@@ -14,6 +14,8 @@ import {MatInputModule} from "@angular/material/input";
 import { BookInfoComponent } from './show-book/book-info/book-info.component';
 import { ShowBooksTableComponent } from './show-books-table/show-books-table.component';
 import { FilterBooksComponent } from './filter-books/filter-books.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 @NgModule({
@@ -32,16 +34,19 @@ import { FilterBooksComponent } from './filter-books/filter-books.component';
     BookElementComponent,
     ShowBookComponent,
     BookInfoComponent,
+    ShowBooksTableComponent,
   ],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule,
-    RouterLink,
-    ReactiveFormsModule,
-    MatInputModule,
-  ]
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatButtonModule,
+        MatIconModule,
+        RouterLink,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatTableModule,
+        MatPaginatorModule,
+    ]
 })
 export class BooksModule {
 }

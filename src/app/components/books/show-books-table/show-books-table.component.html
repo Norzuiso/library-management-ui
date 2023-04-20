@@ -1,1 +1,54 @@
-<p>show-books-table works!</p>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="books">
+
+    <ng-container matColumnDef="ID">
+      <th mat-header-cell *matHeaderCellDef class="text-center border">ID</th>
+      <td mat-cell *matCellDef="let element" class="border px-2"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="scdd">
+      <th mat-header-cell *matHeaderCellDef class="text-center border">SCDD</th>
+      <td mat-cell *matCellDef="let element" class="border px-2"> {{element.scdd}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Titulo">
+      <th mat-header-cell *matHeaderCellDef class="text-center border">Titulo</th>
+      <td mat-cell *matCellDef="let element" class="border px-2"> {{element.title}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Autor">
+      <th mat-header-cell *matHeaderCellDef class="text-center border">Autor</th>
+      <td mat-cell *matCellDef="let element" class="border px-2"> {{element.author}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="Editorial">
+      <th mat-header-cell *matHeaderCellDef class="text-center border">Editorial</th>
+      <td mat-cell *matCellDef="let element" class="border px-2"> {{element.author}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Edition">
+      <th mat-header-cell *matHeaderCellDef class="text-center border">Edición</th>
+      <td mat-cell *matCellDef="let element" class="border px-2"> {{element.edition}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef class="text-center border">Año de publicación</th>
+      <td mat-cell *matCellDef="let element" class="border px-2"> {{element.publishYear}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row
+        (click)="rowClicked(row)"
+        *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator (page)="handlePageEvent($event)"
+                 [length]="totalElements"
+                 [pageSize]="pageSize"
+                 [showFirstLastButtons]="showFirstLastButtons"
+                 [hidePageSize]="true"
+                 [pageIndex]="pageIndex"
+                 aria-label="Select page">
+  </mat-paginator>
+</div>
