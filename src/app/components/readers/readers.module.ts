@@ -11,6 +11,8 @@ import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
+import { ShowReadersTableComponent } from './show-readers/show-readers-table/show-readers-table.component';
+import { FilterReaderComponent } from './filter-reader/filter-reader.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import {RouterLink} from "@angular/router";
     DialogReadersComponent,
     CreateReaderComponent,
     InfoReaderComponent,
+    ShowReadersTableComponent,
+    FilterReaderComponent,
   ],
   exports: [
     ReadersComponent,
@@ -27,6 +31,8 @@ import {RouterLink} from "@angular/router";
     DialogReadersComponent,
     CreateReaderComponent,
     InfoReaderComponent,
+    ShowReadersTableComponent,
+    FilterReaderComponent,
   ],
   imports: [
     CommonModule,

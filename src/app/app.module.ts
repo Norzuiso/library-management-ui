@@ -25,6 +25,7 @@ import { CreateLoanComponent } from './components/loan/create-loan/create-loan.c
 import { ShowLoanComponent } from './components/loan/show-loan/show-loan.component';
 import { LoanInfoComponent } from './components/loan/loan-info/loan-info.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { ShowReaderInfoComponent } from './components/loan/loan-info/show-reader-info/show-reader-info.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     CreateLoanComponent,
     ShowLoanComponent,
     LoanInfoComponent,
+    ShowReaderInfoComponent,
   ],
   imports: [
     ReadersModule,

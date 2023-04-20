@@ -1,1 +1,30 @@
-<p>create-loan works!</p>
+<div class="container">
+
+  <div class="row mb-2 mt-3">
+    <div class="col-12">
+      <button mat-raised-button color="warn" routerLink="/loan" class="w-25">Regresar</button>
+      <button type="button" class="btn btn-success mx-3 w-25" (click)="saveLoan()">Guardar</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 my-2">
+      <span class="h3">Lector</span>
+    </div>
+
+    <div class="col-12 my-2" *ngIf="selectedReader.id==0">
+      <app-show-readers-table [readers]="readers" (getSelectedReader)="readerSelected($event)"></app-show-readers-table>
+    </div>
+    <div class="col-12 my-2" *ngIf="selectedReader.id!=0">
+      <div class="row">
+        <button type="button" class="btn btn-warning editButton w-25" (click)="selectOtherReader()">Seleccionar otro Lector</button>
+      </div>
+      <div class="row">
+
+        <app-show-reader-info [reader]="selectedReader"></app-show-reader-info>
+      </div>
+      <br>
+
+    </div>
+  </div>
+</div>
