@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{book.title}}</mat-card-title>
+    <mat-card-subtitle class="">
+      <span>Autor: {{book.author}}</span>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="container-fluid border-bottom border-top py-1">
+      <span>
+
+        <span class="fw-bold">SCDD: </span>
+        <span class="fst-italic">{{book.scdd}}</span><br>
+
+        <span class="fw-bold">Editorial: </span>
+        <span class="fst-italic">{{book.editorial}}</span><br>
+
+        <span class="fw-bold">Género: </span>
+        <span class="fst-italic">{{book.gender}}</span><br>
+
+        <span class="fw-bold">Edición: </span>
+        <span class="fst-italic">{{book.edition}}</span><br>
+
+        <span class="fw-bold">Año de publicación: </span>
+        <span class="fst-italic">{{book.publishYear}}</span>
+      </span>
+      <br>
+      <div class="mt-2">
+        <span class="h6 fw-bold">Sinopsis: </span>
+        <span
+          class="fst-italic">{{ (book.synopsis.length > 150) ? (book.synopsis | slice:0:150) + '...' : (book.synopsis) }}</span>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-stroked-button class="w-100" (click)="bookSelected()">Leer más</button>
+  </mat-card-actions>
+</mat-card>

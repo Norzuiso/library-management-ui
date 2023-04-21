@@ -1,1 +1,18 @@
-<p>readers works!</p>
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-12">
+      <span class="h3 mx-5">Nuestros lectores</span>
+      <button type="button" class="btn btn-success mx-1 editButton" (click)="createReader()"
+              *ngIf="getRole()  == 'ADMINISTRADOR'">Crear
+      </button>
+
+    </div>
+  </div>
+
+  <div class="row" *ngIf="getRole()  == 'ADMINISTRADOR'">
+    <div class="col-12 ">
+      <app-show-readers></app-show-readers>
+    </div>
+  </div>
+
+</div>

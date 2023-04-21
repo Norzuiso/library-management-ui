@@ -1,1 +1,16 @@
-<p>books works!</p>
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-12">
+      <span class="h3 mx-5">Nuestra colección</span>
+      <button type="button" class="btn btn-success mx-1 editButton" (click)="createBook()"  *ngIf="getRole()  == 'ADMINISTRADOR'">Crear</button>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <app-book-list></app-book-list>
+    </div>
+  </div>
+
+</div>
