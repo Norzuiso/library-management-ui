@@ -17,17 +17,7 @@
   <div class="row">
     <h3>Lector</h3>
     <div class="col-12">
-      <span class="fw-bold">ID: </span>
-      <span class="fst-italic">{{loan.reader.id}}</span><br>
-
-      <span class="fw-bold">Nombre: </span>
-      <span class="fst-italic">{{loan.reader.name}}</span><br>
-
-      <span class="fw-bold">Domicilio: </span>
-      <span class="fst-italic">{{loan.reader.address}}</span><br>
-
-      <span class="fw-bold">Número telefonico: </span>
-      <span class="fst-italic">{{loan.reader.phone}}</span><br>
+      <app-show-reader-info [reader]="loan.reader"></app-show-reader-info>
     </div>
 
   </div>
