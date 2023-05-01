@@ -3,8 +3,10 @@
 
     <div class="row mb-2 mt-3">
       <div class="col-12">
-        <button mat-raised-button color="warn" routerLink="/readers">Regresar</button>
-        <button type="button" class="btn btn-success mx-3" (click)="saveReader()">Guardar</button>
+        <button mat-raised-button color="warn" class="btn btn-danger w-25" routerLink="/readers">Regresar</button>
+        <button type="button" class="btn btn-success mx-3 w-25" (click)="saveReader()">Guardar</button>
+        <button type="button" class="btn btn-warning mx-3 w-25" (click)="deleteReader()" *ngIf="isCreated">Borrar</button>
+
       </div>
     </div>
 

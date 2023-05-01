@@ -1,8 +1,22 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 my-2">
+<form [formGroup]="formGroup" novalidate>
+  <div class="container-fluid">
+    <div class="row mt-3">
+      <div class="col-3">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label> Buscar por nombre</mat-label>
+          <input matInput [(ngModel)]="readerSearch.name"
+                 formControlName="title">
+        </mat-form-field>
+      </div>
+      <div class="col-3 align-content-center">
+        <button mat-raised-button class="btn btn-success mx-3" (click)="feedReaders()">Buscar</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 my-2">
 
-      <app-show-readers-table [readers]="readers" (getSelectedReader)="rowClicked($event)"></app-show-readers-table>
+        <app-show-readers-table [readers]="readers" (getSelectedReader)="rowClicked($event)"></app-show-readers-table>
+      </div>
     </div>
   </div>
-</div>
+</form>

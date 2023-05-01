@@ -47,4 +47,8 @@ export class ReadersService {
   callUpdateReader(id: any, reader: ReaderEntity): Observable<ReaderEntity> {
     return this.http.put<ReaderEntity>(`${globalConstants.LOCALHOST_8020_BUSINESS}/reader/${id}`, reader);
   }
+
+  deleteById(id: any): Observable<boolean> {
+    return this.http.delete<boolean>(`${globalConstants.LOCALHOST_8020_BUSINESS}/reader/${id}`)
+  }
 }

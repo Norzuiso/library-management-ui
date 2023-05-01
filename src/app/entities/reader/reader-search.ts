@@ -5,10 +5,7 @@ export class ReaderSearch {
   phone: string
 
   constructor() {
-    this.id = 0;
     this.name = "";
-    this.address = "";
-    this.phone = "";
   }
 
 }

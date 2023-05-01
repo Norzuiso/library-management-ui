@@ -1,7 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div class="col-3 my-3" *ngFor="let book of books">
-      <app-book-element [book]="book"></app-book-element>
+<form [formGroup]="formGroup" novalidate>
+  <div class="container-fluid mx-5">
+    <div class="row mt-3">
+      <div class="col-3">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label> Buscar por titulo</mat-label>
+          <input matInput [(ngModel)]="bookSearch.title"
+                 formControlName="title">
+        </mat-form-field>
+      </div>
+      <div class="col-3 align-content-center">
+        <button mat-raised-button class="btn btn-success mx-3" (click)="fillBooks()">Buscar</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 my-3" *ngFor="let book of books">
+        <app-book-element [book]="book"></app-book-element>
+      </div>
     </div>
   </div>
-</div>
+</form>

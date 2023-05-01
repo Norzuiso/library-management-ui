@@ -6,6 +6,9 @@
       <button type="button" class="btn btn-success w-25 mx-3" (click)="backBook()"
               *ngIf="this.loan.id!=0 && getRole() == 'ADMINISTRADOR' && this.loan.isActive">Entregar
       </button>
+      <button type="button" class="btn btn-danger w-25 mx-3" (click)="deleteLoan()"
+              *ngIf="!this.loan.isActive">Borrar
+      </button>
     </div>
   </div>
   <hr>

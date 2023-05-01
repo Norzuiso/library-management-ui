@@ -2,9 +2,9 @@
 
   <div class="row mb-2 mt-4">
     <div class="col-12">
-      <button mat-raised-button color="warn" routerLink="/books">Regresar</button>
-      <button type="button" class="btn btn-secondary mx-1" (click)="editBook()"  *ngIf="getRole() == 'ADMINISTRADOR'">Editar</button>
-
+      <button mat-raised-button class="btn btn-danger mx-1 w-25" color="warn" routerLink="/books">Regresar</button>
+      <button type="button" class="btn btn-secondary mx-1 w-25" (click)="editBook()"  *ngIf="getRole() == 'ADMINISTRADOR'">Editar</button>
+      <button type="button" class="btn btn-warning mx-1 w-25" (click)="deleteBook()"  *ngIf="getRole() == 'ADMINISTRADOR'">Borrar</button>
     </div>
   </div>
 

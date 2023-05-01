@@ -12,6 +12,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class CreateReaderComponent implements OnInit {
   reader: ReaderEntity = new ReaderEntity();
+  isCreated: boolean = false;
 
   formGroup = new FormGroup({
     name: new FormControl(this.reader.name, [Validators.required]),
@@ -28,10 +29,13 @@ export class CreateReaderComponent implements OnInit {
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(params => {
       this.reader.id = parseInt(<string>params.get('id'))
+
     })
     if (this.reader.id != 0 && !isNaN(this.reader.id)) {
       this.readerService.callGetReaderByID(this.reader.id).subscribe(data => {
         this.reader = data;
+        console.log("data:"+data);
+        this.isCreated = true;
       })
     }
   }
@@ -51,14 +55,30 @@ export class CreateReaderComponent implements OnInit {
           keepAfterRouteChange: true
         });
       }
-      
+
     });
   }else{
     this.alerts.error("Todos los campos deben de tener información", {
       autoClose: true,
       keepAfterRouteChange: true
     });
-  }  
+  }
 }
 
+  deleteReader() {
+    this.readerService.deleteById(this.reader.id).subscribe(data => {
+      if (data) {
+        this.router.navigate(['/readers'])
+        this.alerts.success("Lector eliminado correctamente", {
+          autoClose: true,
+          keepAfterRouteChange: true
+        });
+      } else {
+        this.alerts.error("El lector no se pudo eliminar", {
+          autoClose: true,
+          keepAfterRouteChange: true
+        });
+      }
+    });
+  }
 }

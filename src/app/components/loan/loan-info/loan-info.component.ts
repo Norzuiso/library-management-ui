@@ -53,4 +53,21 @@ export class LoanInfoComponent implements OnInit {
       }
     });
   }
+
+  deleteLoan() {
+    this.loanService.deleteById(this.loan.id).subscribe(data => {
+      if (data) {
+        this.route.navigate(['/loan'])
+        this.alertsService.success("Libro eliminado correctamente", {
+          autoClose: true,
+          keepAfterRouteChange: true
+        });
+      } else {
+        this.alertsService.error("El prestamo no se pudo eliminar", {
+          autoClose: true,
+          keepAfterRouteChange: true
+        });
+      }
+    });
+  }
 }

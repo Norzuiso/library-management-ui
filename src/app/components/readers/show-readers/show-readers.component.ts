@@ -5,6 +5,7 @@ import {ReaderEntity} from "../../../entities/reader/readerEntity";
 import {PageEvent} from "@angular/material/paginator";
 import {ReaderSearch} from "../../../entities/reader/reader-search";
 import {Router} from "@angular/router";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-show-readers',
@@ -21,9 +22,18 @@ export class ShowReadersComponent implements OnInit {
   pageEvent: PageEvent;
   showFirstLastButtons = true;
   readerSearch: ReaderSearch = new ReaderSearch();
+
+
+  formGroup = new FormGroup({
+    title: new FormControl(this.readerSearch.name),
+  });
   constructor(private readerService: ReadersService,
               private route: Router) {
-    this.readerService.callGetReadersFilterAndPagination(this.pageIndex, this.pageSize, this.readerSearch).subscribe(data =>{
+    this.feedReaders();
+  }
+
+  feedReaders() {
+    this.readerService.callGetReadersFilterAndPagination(this.pageIndex, this.pageSize, this.readerSearch).subscribe(data => {
       this.readers = new MatTableDataSource<ReaderEntity>(data.content);
     });
   }

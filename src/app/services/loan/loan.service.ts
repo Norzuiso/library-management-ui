@@ -29,4 +29,7 @@ export class LoanService {
     return this.client.post<LoanEntity>(`${globalConstants.LOCALHOST_8020_BUSINESS}/loan/back`, loan);
   }
 
+  deleteById(id: number):Observable<boolean>{
+    return this.client.delete<boolean>(`${globalConstants.LOCALHOST_8020_BUSINESS}/loan/${id}`);
+  }
 }

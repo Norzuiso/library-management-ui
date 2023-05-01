@@ -1,15 +1,15 @@
 export class BookSearch {
 
-  id: number = 0;
+  id: number;
   title: string = "";
   author: string = "";
   gender: string = "";
   editorial: string = "";
   publishYear: string = "";
   edition: string = "";
-  copiesQuantity: number = 0;
+  copiesQuantity: number;
   synopsis: string = "";
   scdd: string = "";
-  isAvailable: boolean = false;
+  isAvailable: boolean;
 }
 

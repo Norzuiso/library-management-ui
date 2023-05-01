@@ -3,7 +3,7 @@ import {BookEntity} from "../../../entities/book/book-entity";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {BookService} from "../../../services/books/book.service";
 import {AlertsService} from "../../alerts/alerts.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-books',
@@ -38,6 +38,7 @@ export class CreateBooksComponent implements OnInit {
 
   constructor(private bookService: BookService,
               public alertsService: AlertsService,
+              private router: Router,
               private activeRoute: ActivatedRoute,) {
   }
 
@@ -53,25 +54,26 @@ export class CreateBooksComponent implements OnInit {
   }
 
   saveBook() {
-    if(this.formGroup.valid){
-    this.bookService.callCreateBook(this.book).subscribe(data => {
-      if (data.id != null) {
-        this.alertsService.success("Libro creado correctamente", {
-          autoClose: true,
-          keepAfterRouteChange: true
-        });
-      } else {
-        this.alertsService.error("Error al crear libro", {
-          autoClose: true,
-          keepAfterRouteChange: true
-        });
-      }
-    });
-  }else{
-    this.alertsService.error("Es necesario ingresar todos los datos del libro", {
-      autoClose: true,
-      keepAfterRouteChange: true
-    });
+    if (this.formGroup.valid) {
+      this.bookService.callCreateBook(this.book).subscribe(data => {
+        if (data.id != null) {
+          this.alertsService.success("Libro creado correctamente", {
+            autoClose: true,
+            keepAfterRouteChange: true
+          });
+          this.router.navigate(['/books'])
+        } else {
+          this.alertsService.error("Error al crear libro", {
+            autoClose: true,
+            keepAfterRouteChange: true
+          });
+        }
+      });
+    } else {
+      this.alertsService.error("Es necesario ingresar todos los datos del libro", {
+        autoClose: true,
+        keepAfterRouteChange: true
+      });
+    }
   }
-}
 }

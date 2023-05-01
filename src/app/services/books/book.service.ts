@@ -47,4 +47,8 @@ export class BookService {
   callUpdateBook(id: any, book: BookEntity): Observable<BookEntity> {
     return this.http.put<BookEntity>(`${globalConstants.LOCALHOST_8020_BUSINESS}/book/${id}`, book);
   }
+
+  deleteById(id: any): Observable<boolean> {
+    return this.http.delete<boolean>(`${globalConstants.LOCALHOST_8020_BUSINESS}/book/${id}`)
+  }
 }
