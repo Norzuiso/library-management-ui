@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
           autoClose: true,
           keepAfterRouteChange: true
         });
-        this.router.navigate(["/"]);
+        this.router.navigate(["/inicio"]);
       } else {
         this.alertsService.error("La contraseña es incorrecta, intentalo de nuevo", {
           autoClose: true,

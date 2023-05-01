@@ -27,4 +27,8 @@ export class LibraryService {
     return this.http.get<Boolean>(globalConstants.LOCALHOST_8020_BUSINESS + '/library/'+password);
   }
 
+  logout(): Observable<Boolean>  {
+    return this.http.get<Boolean>(globalConstants.LOCALHOST_8020_BUSINESS + '/library/logout');
+
+  }
 }

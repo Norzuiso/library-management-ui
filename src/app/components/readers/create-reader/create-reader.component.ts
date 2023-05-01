@@ -74,7 +74,7 @@ export class CreateReaderComponent implements OnInit {
           keepAfterRouteChange: true
         });
       } else {
-        this.alerts.error("El lector no se pudo eliminar", {
+        this.alerts.error("El lector no se pudo eliminar, es posible que existan prestamos con este lector", {
           autoClose: true,
           keepAfterRouteChange: true
         });

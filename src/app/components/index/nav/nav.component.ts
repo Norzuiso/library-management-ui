@@ -24,7 +24,11 @@ export class NavComponent implements OnInit {
   }
 
   logout() {
-    localStorage.setItem('role', 'user');
+    this.libraryService.logout().subscribe(data => {
+      if (data) {
+        localStorage.setItem('role', 'user');
+      }
+    });
   }
 
   getRole() {

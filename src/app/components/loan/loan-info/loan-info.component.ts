@@ -58,7 +58,7 @@ export class LoanInfoComponent implements OnInit {
     this.loanService.deleteById(this.loan.id).subscribe(data => {
       if (data) {
         this.route.navigate(['/loan'])
-        this.alertsService.success("Libro eliminado correctamente", {
+        this.alertsService.success("Prestamo eliminado correctamente", {
           autoClose: true,
           keepAfterRouteChange: true
         });
