@@ -53,6 +53,7 @@ export class CreateBooksComponent implements OnInit {
   }
 
   saveBook() {
+    if(this.formGroup.valid){
     this.bookService.callCreateBook(this.book).subscribe(data => {
       if (data.id != null) {
         this.alertsService.success("Libro creado correctamente", {
@@ -66,6 +67,11 @@ export class CreateBooksComponent implements OnInit {
         });
       }
     });
+  }else{
+    this.alertsService.error("Es necesario ingresar todos los datos del libro", {
+      autoClose: true,
+      keepAfterRouteChange: true
+    });
   }
-
+}
 }

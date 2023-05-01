@@ -4,9 +4,7 @@
     <div class="col-12">
       <button mat-raised-button color="warn" routerLink="/books">Regresar</button>
       <button type="button" class="btn btn-secondary mx-1" (click)="editBook()"  *ngIf="getRole() == 'ADMINISTRADOR'">Editar</button>
-      <button type="button" class="btn btn-success" (click)="loanBook()"
-              *ngIf="this.book.id!=0 && getRole() == 'ADMINISTRADOR'">Pedir libro
-      </button>
+
     </div>
   </div>
 

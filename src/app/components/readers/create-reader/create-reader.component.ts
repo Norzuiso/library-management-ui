@@ -37,6 +37,7 @@ export class CreateReaderComponent implements OnInit {
   }
 
   saveReader() {
+    if(this.reader.address != "" && this.reader.name!="" && this.reader.phone != ""){
     this.readerService.callCreateReader(this.reader).subscribe(data => {
       if (data.id != null) {
         this.alerts.success("Lector guardado correctamente", {
@@ -50,7 +51,14 @@ export class CreateReaderComponent implements OnInit {
           keepAfterRouteChange: true
         });
       }
+      
     });
-  }
+  }else{
+    this.alerts.error("Todos los campos deben de tener información", {
+      autoClose: true,
+      keepAfterRouteChange: true
+    });
+  }  
+}
 
 }
